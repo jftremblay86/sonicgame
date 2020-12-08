@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://StartMenu.gd" type="Script" id=1]
+[ext_resource path="res://sonic-and-tails-website-test3.jpg" type="Texture" id=2]
+[ext_resource path="res://Music and Sounds/Sonic 2_ Chemical Plant Zone __ Cover by RichaadEB & ThunderScott-320k.wav" type="AudioStream" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0392157, 0.00784314, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0313726, 0.980392, 0.2, 1 )
+
+[node name="StartMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CenterContainer"]
+position = Vector2( 240, 136 )
+scale = Vector2( 0.8, 0.675 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 183.0
+margin_top = 92.0
+margin_right = 297.0
+margin_bottom = 178.0
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 114.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 0
+custom_constants/shadow_as_outline = 0
+text = "Sonic Game"
+align = 1
+uppercase = true
+
+[node name="NewGame" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 114.0
+margin_bottom = 38.0
+custom_styles/hover = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Nouvelle partie"
+
+[node name="exitGame" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 42.0
+margin_right = 114.0
+margin_bottom = 62.0
+custom_styles/hover = SubResource( 2 )
+text = "Quitter la partie"
+
+[node name="Option" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 114.0
+margin_bottom = 86.0
+custom_styles/hover = SubResource( 3 )
+text = "Option"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -30.0
+autoplay = true
+[connection signal="pressed" from="CenterContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/exitGame" to="." method="_on_exitGame_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Option" to="." method="_on_Option_pressed"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sonic 2_ Chemical Plant Zone __ Cover by RichaadEB & ThunderScott-320k.wav-42b8141b357bfb64ff58b51d126986b7.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/Sonic 2_ Chemical Plant Zone __ Cover by RichaadEB & ThunderScott-320k.wav"
+dest_files=[ "res://.import/Sonic 2_ Chemical Plant Zone __ Cover by RichaadEB & ThunderScott-320k.wav-42b8141b357bfb64ff58b51d126986b7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
